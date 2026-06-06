@@ -38,6 +38,24 @@ bool istFertig = true;
 long einwohner = 830000;
 ```
 
+## Arithmetische Operatoren für ganze Zahlen
+```java
+int a = 34;
+int b = 26;
+
+int c = a + b; // = 60
+int c = a - b; // = 8
+int c = a * b; // = 884
+int c = a / b; // = 1 weil / nur ganze zahlen rechnet
+int c = a % b; // = 8
+
+// Zuweisungen
+
+c += 3; // entspricht c = c + 3;
+c *= 3; // entspricht c = c - 3;
+g %= 3; // entspricht c = c % 3;
+```
+
 ## Bedingungen
 
 `if /else` - wenn etwas ist `if`, sonst mach es `else`  
