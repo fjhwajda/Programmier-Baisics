@@ -1,131 +1,150 @@
-# Programmier-Baisics
+# Programming Basics
 
-Beim Programmieren gibt es einige grundlegende Bausteine, die in fast jeder Programmiersprache vorkommen.
-Diese Bausteine bleiben inhaltlich immer gleich, egal wie die Syntax der Sprache aussieht.
-Dazu gehören Variablen, Bedingungen, Schleifen, Funktionen, Ein- und Ausgabe sowie Kommentare.
-In diesem Dokument werden diese Kernkonzepte zusammengefasst, um den Einstieg ins Programmieren zu erleichtern.
+In programming, there are fundamental building blocks found in almost every programming language.
+These core concepts remain functionally identical regardless of the language's syntax.
+They include variables, conditions, loops, methods/functions, input/output, and comments.
+This document summarizes these core concepts using **Java** to help you get started.
 
-## Varibalen
+## Variables
 
-**int** - ganze zahlen  
-```python
-int alter = 22;
-```
-**float** - kommazahlen  
-```python
-float preis = 3.99;
+**int** - whole numbers (integers)  
+```java
+int age = 22;
 ```
 
-**double** - kommazahlen genauer  
-```python
-double pi = 3.1415926535
+**float** - single-precision floating-point numbers  
+```java
+float price = 3.99f;
 ```
 
-**char** - einzelne Zeichen  
-```python
-char buchstabe 'A'
-```
-**string** - Wörter/Sätze  
-```python
-string name = "MAX";
-```
-**bool** - true or false  
-```python
-bool istFertig = true;
-```
-**long** - Grosse zahlen  
-```python
-long einwohner = 830000;
+**double** - double-precision floating-point numbers (more precise)  
+```java
+double pi = 3.1415926535;
 ```
 
-## Arithmetische Operatoren für ganze Zahlen
+**char** - single character  
+```java
+char letter = 'A';
+```
+
+**String** - text / words / sentences (Object type in Java)  
+```java
+String name = "MAX";
+```
+
+**boolean** - true or false  
+```java
+boolean isDone = true;
+```
+
+**long** - large whole numbers  
+```java
+long population = 8300000L;
+```
+
+## Arithmetic Operators for Integers
+
 ```java
 int a = 34;
 int b = 26;
 
-int c = a + b; // = 60
-int c = a - b; // = 8
-int c = a * b; // = 884
-int c = a / b; // = 1 weil / nur ganze zahlen rechnet
-int c = a % b; // = 8
+int sum = a + b;        // = 60
+int diff = a - b;       // = 8
+int prod = a * b;       // = 884
+int div = a / b;        // = 1 (integer division truncates decimal places)
+int mod = a % b;        // = 8 (modulo / remainder)
 
-// Zuweisungen
-
-c += 3; // entspricht c = c + 3;
-c *= 3; // entspricht c = c - 3;
-g %= 3; // entspricht c = c % 3;
+// Compound Assignments
+int c = 10;
+c += 3; // equivalent to: c = c + 3; (c becomes 13)
+c *= 3; // equivalent to: c = c * 3; (c becomes 39)
+c %= 3; // equivalent to: c = c % 3; (c becomes 0)
 ```
 
-## Bedingungen
+## Conditions
 
-`if /else` - wenn etwas ist `if`, sonst mach es `else`  
-```python
-zahl = 7
+`if / else if / else` - execute code blocks conditionally:
 
-if zahl < 5:
-    print("Die Zahl ist kleiner als 5")
-elif zahl == 5:
-    print("Die Zahl ist genau 5")
-else:
-    print("Die Zahl ist grösser als 5")
-```
-## Schleifen
-
-`for /while` - der code wird **X** wiederholt `for` während `while` eine Bedinung wahr ist
-```python
-# for-Schleife: Wiederhole 3 Mal
-for i in range(3):
-    print(f"For-Schleife Durchlauf {i}")
-
-# while-Schleife: Wiederhole solange Bedingung wahr ist
-counter = 0
-while counter < 3:
-    print(f"While-Schleife Durchlauf {counter}")
-    counter += 1
-```
-
-## Funktionen
-
-Der Code wird verpackt und kann **wiederverwendet** werden
-```python
-def addiere(a, b):
-    """Diese Funktion addiert zwei Zahlen"""
-    return a + b
-
-ergebnis = addiere(5, 10)
-print(f"Ergebnis der Funktion: {ergebnis}")
-```
-
-## Ein- und Ausgabe
-Damit das Programm mit uns redet
-```python
-name = input("Wie heisst du? ")  # Benutzer gibt Text ein
-print(f"Hallo {name}, schön dich zu sehen!")
-```
-
-## Kommentare
-Texte die der Coputer ignoriert, um bswp. etwas zu beschreiben
-```python
-# Einzeiliger Kommentar in Python
-"""
-Mehrzeiliger Kommentar
-oder Docstring
-"""
-```
-```cpp
-// Einzeiliger Kommentar in C++
-/*
-   Mehrzeiliger Kommentar
-*/
-```
 ```java
-// Einzeiliger Kommentar in Java
-/*
-   Mehrzeiliger Kommentar
-*/
+int number = 7;
+
+if (number < 5) {
+    System.out.println("The number is less than 5");
+} else if (number == 5) {
+    System.out.println("The number is exactly 5");
+} else {
+    System.out.println("The number is greater than 5");
+}
 ```
 
+## Loops
 
+`for / while` - repeat code a fixed number of times (`for`) or while a condition is true (`while`):
 
+```java
+// for loop: repeat 3 times
+for (int i = 0; i < 3; i++) {
+    System.out.println("For loop iteration " + i);
+}
 
+// while loop: repeat as long as the condition is true
+int counter = 0;
+while (counter < 3) {
+    System.out.println("While loop iteration " + counter);
+    counter++;
+}
+```
 
+## Methods (Functions)
+
+Code is packaged into reusable blocks:
+
+```java
+public class Calculator {
+    // Method declaration
+    public static int add(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        int result = add(5, 10);
+        System.out.println("Result: " + result);
+    }
+}
+```
+
+## Input and Output
+
+To interact with the user via the console:
+
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("What is your name? ");
+        String name = scanner.nextLine(); // Reads user input
+
+        System.out.println("Hello " + name + ", nice to meet you!");
+        
+        scanner.close();
+    }
+}
+```
+
+## Comments
+
+Text ignored by the compiler, used to document and explain code:
+
+```java
+// Single-line comment in Java
+/*
+   Multi-line comment
+   spanning several lines
+*/
+/**
+ * Javadoc comment (used for API documentation)
+ */
+```
